@@ -17,6 +17,7 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         setLoading(false)
       } else {
+        setLoading(false)
         console.log('no user found')
       }
     })
