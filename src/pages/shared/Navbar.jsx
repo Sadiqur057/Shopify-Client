@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const Navbar = () => {
   const { user, loading, logOut } = useContext(AuthContext);
 
@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logOut()
-      .then(()=>{
+      .then(() => {
         navigate('/login')
       })
       .catch(error => console.log(error))
@@ -16,7 +16,9 @@ const Navbar = () => {
 
   return (
     <div className="bg-secondary h-16 flex px-4 sm:px-10 justify-between items-center">
-      <h2 className="text-white font-semibold text-xl">ShopiFy</h2>
+      <Link to="/">
+        <h2 className="text-white font-semibold text-xl">ShopiFy</h2>
+      </Link>
       {
         loading && <p className="text-gray-300">Loading..</p>
       }
