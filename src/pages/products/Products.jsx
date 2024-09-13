@@ -146,14 +146,14 @@ const Products = () => {
             className="py-2 sm:py-3  rounded-3xl px-2 border border-gray-300 sm:px-4 text-gray-500 w-[180px] sm:w-[340px]"
           />
           <button
-            className="text-white bg-primary rounded-full p-3 sm:p-4 border border-indigo-600"
+            className="text-white bg-primary rounded-full p-3 sm:p-4 border hover:bg-secondary"
             onClick={handleFilter}
           >
             <FaSearch />
           </button>
         </div>
         <button
-          className="text-white bg-primary px-3 sm:px-6 rounded-3xl py-2 sm:py-3 border border-indigo-600 flex items-center gap-1"
+          className="text-white bg-primary px-3 sm:px-6 rounded-3xl py-2 sm:py-3 border hover:bg-secondary flex items-center gap-1"
           onClick={handleOpen}
         >
           <MdOutlineDashboardCustomize /> Filter
@@ -196,7 +196,7 @@ const Products = () => {
                   type="number"
                   value={formValues.minPrice}
                   onChange={handleFormInputChange}
-                  className="px-3 py-2 border border-indigo-gray-200 rounded-xl w-[50%]"
+                  className="px-3 py-2 border border-blue-gray-200 rounded-xl w-[50%]"
                   placeholder="min price"
                   name="minPrice"
                 />
@@ -204,16 +204,16 @@ const Products = () => {
                   type="number"
                   value={formValues.maxPrice}
                   onChange={handleFormInputChange}
-                  className="px-3 py-2 border border-indigo-gray-200 rounded-xl w-[50%]"
+                  className="px-3 py-2 border border-blue-gray-200 rounded-xl w-[50%]"
                   placeholder="max price"
                   name="maxPrice"
                 />
               </div>
               <div className="flex gap-3">
-                <button onClick={handleReset} className="text-white bg-primary py-2 rounded-xl w-full">
+                <button onClick={handleReset} className="text-white bg-primary hover:bg-secondary py-2 rounded-xl w-full">
                   Reset
                 </button>
-                <button onClick={handleFilter} className="text-white bg-[#143b91] py-2 rounded-xl w-full">
+                <button onClick={handleFilter} className="text-white bg-primary hover:bg-secondary py-2 rounded-xl w-full">
                   Apply
                 </button>
               </div>
@@ -231,11 +231,11 @@ const Products = () => {
               ))}
             </div>
             <div className="mt-4 text-white flex justify-center gap-2">
-              <button onClick={handlePrevPage} className="bg-secondary py-1 px-1.5 rounded">Prev</button>
+              <button onClick={handlePrevPage} className="bg-primary py-1 px-1.5 rounded">Prev</button>
               {
-                pages.map(page => <button onClick={() => setCurrPage(page)} className={`${page === currPage ? "bg-indigo-600" : "bg-secondary"} min-w-8 min-h-8 p-1 rounded`} key={page}>{page + 1}</button>)
+                pages.map(page => <button onClick={() => setCurrPage(page)} className={`${page === currPage ? "bg-secondary" : "bg-primary"} min-w-8 min-h-8 p-1 rounded`} key={page}>{page + 1}</button>)
               }
-              <button onClick={handleNextPage} className="bg-secondary py-1 px-1.5 rounded">Next</button>
+              <button onClick={handleNextPage} className="bg-primary py-1 px-1.5 rounded">Next</button>
             </div>
           </div>
       }

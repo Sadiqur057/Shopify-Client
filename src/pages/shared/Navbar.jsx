@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate, Link, NavLink } from "react-router-dom";
+import { IoMenu, IoClose } from "react-icons/io5";
 const Navbar = () => {
   const { user, loading, logOut } = useContext(AuthContext);
 
@@ -37,7 +38,7 @@ const Navbar = () => {
         loading && <p className="text-gray-300">Loading..</p>
       }
       {
-        user && <button onClick={handleLogout} className="hover:bg-indigo-600 bg-primary text-gray-100 px-5 py-2 rounded-3xl">Logout</button>
+        user && <button onClick={handleLogout} className="hover:bg-secondary bg-primary text-gray-100 px-5 py-2 rounded-3xl">Logout</button>
       }
       {
         !user && !loading && <Link to='/login'><button className="bg-indigo-600 hover:bg-primary  text-gray-100 px-5 py-2 rounded-3xl">Login</button></Link>
@@ -46,7 +47,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="relative bg-dark h-16 flex sm:px-10">
+    <nav className="relative px-4 bg-dark h-16 flex sm:px-10">
       <div className="py-4 mx-auto md:flex md:justify-between md:items-center w-full">
         <div className="flex items-center justify-between w-full">
           <Link to="/">
@@ -57,39 +58,13 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400"
+              className="text-white text-3xl"
               aria-label="toggle menu"
             >
               {!isOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 8h16M4 16h16"
-                  />
-                </svg>
+                <IoMenu/>
               ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <IoClose/>
               )}
             </button>
           </div>
@@ -98,7 +73,7 @@ const Navbar = () => {
 
         <div className="md:hidden block">
           <div
-            className={`absolute inset-x-0 z-20 mt-5 w-full px-4 py-4 transition-all duration-300 ease-in-out bg-dark flex flex-col gap-1 ${isOpen ? "translate-x-0 opacity-100" : "opacity-0 -translate-x-full"
+            className={`absolute inset-x-0 z-20 mt-4 w-full px-4 py-4 transition-all duration-300 ease-in-out bg-dark flex flex-col gap-3 ${isOpen ? "translate-x-0 opacity-100" : "opacity-0 -translate-x-full"
               }`}
           >
               {navList}
