@@ -17,7 +17,7 @@ export const Routes = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: '/products',
+        path: '/shop',
         element: <PrivateRoutes><Products></Products></PrivateRoutes>
       },
       {
