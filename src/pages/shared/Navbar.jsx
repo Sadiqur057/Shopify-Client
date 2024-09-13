@@ -26,7 +26,7 @@ const Navbar = () => {
         user && <button onClick={handleLogout} className="bg-primary text-gray-100 px-5 py-2 rounded-3xl">Logout</button>
       }
       {
-        !user && !loading && <button className="bg-primary text-gray-100 px-5 py-2 rounded-3xl">Login</button>
+        !user && !loading && <Link to='/login'><button className="bg-primary text-gray-100 px-5 py-2 rounded-3xl">Login</button></Link>
       }
     </div>
   );
