@@ -15,9 +15,9 @@ const Navbar = () => {
       .catch(error => console.log(error))
   }
   const activeStyles =
-    "text-gray-200 hover:text-blue-500";
+    "text-gray-200 hover:text-primary";
   const inactiveStyles =
-    "text-gray-400 hover:text-blue-500";
+    "text-gray-400 hover:text-primary";
 
   const navList = (
     <>
@@ -37,25 +37,17 @@ const Navbar = () => {
         loading && <p className="text-gray-300">Loading..</p>
       }
       {
-        user && <button onClick={handleLogout} className="bg-blue-600 hover:bg-blue-500 text-gray-100 px-5 py-2 rounded-3xl">Logout</button>
+        user && <button onClick={handleLogout} className="hover:bg-indigo-600 bg-primary text-gray-100 px-5 py-2 rounded-3xl">Logout</button>
       }
       {
-        !user && !loading && <Link to='/login'><button className="bg-blue-600 hover:bg-blue-500  text-gray-100 px-5 py-2 rounded-3xl">Login</button></Link>
+        !user && !loading && <Link to='/login'><button className="bg-indigo-600 hover:bg-primary  text-gray-100 px-5 py-2 rounded-3xl">Login</button></Link>
       }
     </>
   );
 
   return (
-    // <div className="bg-secondary h-16 flex px-4 sm:px-10 justify-between items-center">
-    //   <Link to="/">
-    //     <h2 className="text-white font-semibold text-xl">ShopiFy</h2>
-    //   </Link>
-    //   <div className="flex">
-    //     {navList}
-    //   </div>
-    // </div>
-    <nav className="relative bg-secondary h-16 flex sm:px-10">
-      <div className="md:container px-6 py-4 mx-auto md:flex md:justify-between md:items-center w-full">
+    <nav className="relative bg-dark h-16 flex sm:px-10">
+      <div className="py-4 mx-auto md:flex md:justify-between md:items-center w-full">
         <div className="flex items-center justify-between w-full">
           <Link to="/">
             <h2 className="text-white font-semibold text-xl">ShopiFy</h2>
@@ -106,14 +98,14 @@ const Navbar = () => {
 
         <div className="md:hidden block">
           <div
-            className={`absolute inset-x-0 z-20 mt-5 w-full px-4 py-4 transition-all duration-300 ease-in-out bg-secondary flex flex-col gap-1 ${isOpen ? "translate-x-0 opacity-100" : "opacity-0 -translate-x-full"
+            className={`absolute inset-x-0 z-20 mt-5 w-full px-4 py-4 transition-all duration-300 ease-in-out bg-dark flex flex-col gap-1 ${isOpen ? "translate-x-0 opacity-100" : "opacity-0 -translate-x-full"
               }`}
           >
               {navList}
 
             <div className="flex justify-center md:block">
               <button
-                className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-300"
+                className="relative text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-gray-600"
                 
               >
                 <svg
@@ -130,7 +122,7 @@ const Navbar = () => {
                     strokeLinejoin="round"
                   />
                 </svg>
-                <span className="absolute top-0 left-0 p-1 text-xs text-white bg-blue-500 rounded-full"></span>
+                <span className="absolute top-0 left-0 p-1 text-xs text-white bg-primary rounded-full"></span>
               </button>
             </div>
           </div>

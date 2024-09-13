@@ -135,30 +135,31 @@ const Products = () => {
   const productsToDisplay = filteredData || allData;
 
   return (
-    <div className="min-h-[calc(100vh-224px)] px-4 sm:px-10 py-4 sm:py-10 bg-primary">
+    <div className="min-h-[calc(100vh-224px)] px-4 sm:px-10 py-4 sm:py-10">
       <div className="flex justify-between pb-6 gap-2 sm:gap-10 items-center">
         <div className="flex gap-2 items-center">
           <input
             type="text"
             name="keyword"
             onChange={handleFormInputChange}
-            className="py-2 sm:py-3 bg-secondary  rounded-3xl px-2 border border-gray-800 sm:px-4 text-white w-[180px] sm:w-[340px]"
+            placeholder="Search"
+            className="py-2 sm:py-3  rounded-3xl px-2 border border-gray-300 sm:px-4 text-gray-500 w-[180px] sm:w-[340px]"
           />
           <button
-            className="text-white bg-secondary rounded-full p-3 sm:p-4 border border-gray-800"
+            className="text-white bg-primary rounded-full p-3 sm:p-4 border border-indigo-600"
             onClick={handleFilter}
           >
             <FaSearch />
           </button>
         </div>
         <button
-          className="text-white bg-secondary px-3 sm:px-6 rounded-3xl py-2 sm:py-3 border border-gray-800 flex items-center gap-1"
+          className="text-white bg-primary px-3 sm:px-6 rounded-3xl py-2 sm:py-3 border border-indigo-600 flex items-center gap-1"
           onClick={handleOpen}
         >
           <MdOutlineDashboardCustomize /> Filter
         </button>
 
-        <Dialog size="md" className="rounded-xl mb-20 bg-secondary" open={open} handler={handleOpen}>
+        <Dialog size="md" className="rounded-xl mb-20 " open={open} handler={handleOpen}>
           <div className="flex justify-end pr-4 md:pr-6 mb-1 pt-4">
             <button onClick={handleClose}>
               <IoCloseSharp className="text-gray-400 text-2xl" />
@@ -166,7 +167,7 @@ const Products = () => {
           </div>
           <DialogBody className="max-h-[90vh] overflow-auto rounded-lg px-5 pb-14 sm:pb-6 md:px-8">
             <div className="p-4 flex flex-col gap-3">
-              <Select value={categoryValue} label="Select Category" color="blue" required onChange={handleCategoryOptions}>
+              <Select value={categoryValue} label="Select Category" color="indigo" required onChange={handleCategoryOptions}>
                 {categoryOptions.map(category => (
                   <Option key={category.value} value={category.value}>
                     {category.label}
@@ -174,7 +175,7 @@ const Products = () => {
                 ))}
               </Select>
 
-              <Select label="Select Brand" color="blue" required onChange={handleBrandOptions} value={BrandValue}>
+              <Select label="Select Brand" color="indigo" required onChange={handleBrandOptions} value={BrandValue}>
                 {BrandOptions.map(brand => (
                   <Option key={brand.value} value={brand.value}>
                     {brand.label}
@@ -182,7 +183,7 @@ const Products = () => {
                 ))}
               </Select>
 
-              <Select label="Sort by" value={sortBy} color="blue" required onChange={handleSortingOptions} >
+              <Select label="Sort by" value={sortBy} color="indigo" required onChange={handleSortingOptions} >
                 {sortingOptions.map(sorting => (
                   <Option key={sorting.value} value={sorting.value}>
                     {sorting.label}
@@ -195,7 +196,7 @@ const Products = () => {
                   type="number"
                   value={formValues.minPrice}
                   onChange={handleFormInputChange}
-                  className="bg-secondary px-3 py-2 border border-gray-700 rounded-xl w-[50%]"
+                  className="px-3 py-2 border border-indigo-gray-200 rounded-xl w-[50%]"
                   placeholder="min price"
                   name="minPrice"
                 />
@@ -203,7 +204,7 @@ const Products = () => {
                   type="number"
                   value={formValues.maxPrice}
                   onChange={handleFormInputChange}
-                  className="bg-secondary px-3 py-2 border border-gray-700 rounded-xl w-[50%]"
+                  className="px-3 py-2 border border-indigo-gray-200 rounded-xl w-[50%]"
                   placeholder="max price"
                   name="maxPrice"
                 />
@@ -212,7 +213,7 @@ const Products = () => {
                 <button onClick={handleReset} className="text-white bg-primary py-2 rounded-xl w-full">
                   Reset
                 </button>
-                <button onClick={handleFilter} className="text-white bg-primary py-2 rounded-xl w-full">
+                <button onClick={handleFilter} className="text-white bg-[#143b91] py-2 rounded-xl w-full">
                   Apply
                 </button>
               </div>
@@ -232,7 +233,7 @@ const Products = () => {
             <div className="mt-4 text-white flex justify-center gap-2">
               <button onClick={handlePrevPage} className="bg-secondary py-1 px-1.5 rounded">Prev</button>
               {
-                pages.map(page => <button onClick={() => setCurrPage(page)} className={`${page === currPage ? "bg-blue-gray-600" : "bg-secondary"} min-w-8 min-h-8 p-1 rounded`} key={page}>{page + 1}</button>)
+                pages.map(page => <button onClick={() => setCurrPage(page)} className={`${page === currPage ? "bg-indigo-600" : "bg-secondary"} min-w-8 min-h-8 p-1 rounded`} key={page}>{page + 1}</button>)
               }
               <button onClick={handleNextPage} className="bg-secondary py-1 px-1.5 rounded">Next</button>
             </div>

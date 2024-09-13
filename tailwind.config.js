@@ -11,8 +11,9 @@ module.exports = withMT({
   theme: {
     extend: {
       colors:{
-        'primary':'#0f172a',
-        'secondary': '#1e293b',
+        'primary':'#143b91',
+        'secondary': '#235ee9',
+        'dark': "#1e293b ",
         'text': '#706f6f',
       }
     },
