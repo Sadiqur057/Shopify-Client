@@ -47,13 +47,13 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="relative px-4 bg-dark h-16 flex sm:px-10">
-      <div className="py-4 mx-auto md:flex md:justify-between md:items-center w-full">
+    <nav className="relative bg-dark h-16 flex">
+      <div className="py-4 max-w-7xl w-[90%] md:w-4/5 mx-auto md:flex md:justify-between md:items-center">
         <div className="flex items-center justify-between w-full">
           <Link to="/">
             <h2 className="text-white font-semibold text-xl">ShopiFy</h2>
           </Link>
-          <div className="md:flex gap-4 hidden items-center">{navList}</div>
+          <div className="md:flex gap-6 hidden items-center">{navList}</div>
           <div className="flex md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
