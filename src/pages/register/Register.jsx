@@ -16,7 +16,7 @@ const Register = () => {
     createUser(data?.email, data?.password)
     .then(result=>{
       console.log(result?.user)
-      navigate('/products')
+      navigate('/shop')
     })
     
   }

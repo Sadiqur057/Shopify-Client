@@ -14,7 +14,7 @@ const Login = () => {
   const onSubmit = (data) => {
     signInUser(data?.email, data?.password)
       .then(() => {
-        navigate('/products')
+        navigate('/shop')
       })
   }
 
@@ -22,7 +22,7 @@ const Login = () => {
     googleSignIn()
     .then(result=>{
       console.log(result)
-      navigate('/products')
+      navigate('/shop')
     })
   }
 
