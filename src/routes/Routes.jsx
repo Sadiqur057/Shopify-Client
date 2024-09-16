@@ -7,27 +7,39 @@ import Products from "../pages/products/Products";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import PrivateRoutes from "./PrivateRoutes";
+import Dashboard from "../layout/Dashboard";
+import Profile from "../pages/Dashboard/Profile";
 export const Routes = createBrowserRouter([
   {
     path: '/',
-    element: <Root></Root>,
+    element: <Root/>,
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home/>
       },
       {
         path: '/shop',
-        element: <PrivateRoutes><Products></Products></PrivateRoutes>
+        element: <PrivateRoutes><Products/></PrivateRoutes>
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <Login/>
       },
       {
         path: '/register',
-        element: <Register></Register>
+        element: <Register/>
       },
+    ]
+  },
+  {
+    path: '/dashboard',
+    element:<Dashboard/>,
+    children:[
+      {
+        path: '/dashboard/user',
+        element:<Profile/>
+      }
     ]
   }
 ])
