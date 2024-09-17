@@ -6,7 +6,6 @@ import { FaCartPlus, FaSitemap, FaUserAlt } from "react-icons/fa";
 import { ImStatsBars } from "react-icons/im";
 import { MdManageAccounts, MdManageHistory, MdOutlineAddHomeWork, MdOutlineLibraryAdd } from "react-icons/md";
 import { FaCircleDollarToSlot, FaShop } from "react-icons/fa6";
-import { RiUserSettingsFill } from "react-icons/ri";
 
 
 import {
@@ -59,12 +58,12 @@ const Dashboard = () => {
         <Drawer
           open={open}
           overlay={false}
-          className="shadow-none lg:relative w-[260px] bg-dark">
+          className="shadow-none lg:relative w-[274px] px-1 bg-dark">
           <div
             className="mb-2 flex items-center justify-between p-4">
             <Typography
               variant="h5"
-              color="blue-gray">
+              color="white">
               ShopiFy
             </Typography>
             <IconButton
@@ -85,12 +84,8 @@ const Dashboard = () => {
                 Profile
               </ListItem>
             </NavLink>
-            <ListItem>
-              <ListItemPrefix>
-                <ImStatsBars />
-              </ListItemPrefix>
-              Statistics
-            </ListItem>
+            <NavLink to="/dashboard/carts"
+              className={({ isActive }) => (isActive && activeStyles)}>
             <ListItem>
               <ListItemPrefix>
                 <FaCartPlus />
@@ -105,6 +100,7 @@ const Dashboard = () => {
                 />
               </ListItemSuffix>
             </ListItem>
+              </NavLink>
             <ListItem>
               <ListItemPrefix>
                 <MdManageHistory />
@@ -133,6 +129,12 @@ const Dashboard = () => {
             </ListItem>
 
             {/* Admin */}
+            <ListItem>
+              <ListItemPrefix>
+                <ImStatsBars />
+              </ListItemPrefix>
+              Statistics
+            </ListItem>
             <ListItem>
               <ListItemPrefix>
                 <MdManageAccounts />
