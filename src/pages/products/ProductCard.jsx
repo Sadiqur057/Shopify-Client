@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 const ProductCard = ({pd}) => {
   const {name, image, brand,  description, price, category, ratings, date} = pd || {}
   return (
-    <div className=" bg-gray-100 border-gray-200 border rounded-lg hover:cursor-pointer hover:shadow-md hover:shadow-indigo-100 hover:scale-[1.01]">
+    <div className="bg-white border-gray-200 border rounded-lg hover:cursor-pointer hover:shadow-md hover:shadow-indigo-100 hover:scale-[1.01]">
       <div className="relative">
         <img className="h-40 rounded w-full object-cover object-center" src={image} alt={name} />
         <p className="absolute bottom-4 right-4 text-gray-200 text-sm p-2 py-1 rounded-xl bg-primary">{ratings}</p>
